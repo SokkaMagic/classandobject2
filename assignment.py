@@ -52,8 +52,47 @@ class Student:
         return highest
 # Exercise 3
 class Song:
-    pass
+    def __init__(self,title,artist,seconds):
+        self.title = title
+        self.artist=artist
+        self.seconds=seconds
+    def length(self):
+        if self.seconds==0:
+            return "0:00"
+        if 10>(self.seconds-(round(self.seconds/60)*60)):
+            return f"{round(self.seconds/60)}:0{self.seconds-60*round(self.seconds/60)}"
+        return f"{round(self.seconds/60)}:{self.seconds-60*round(self.seconds/60)}"
+
 
 
 class Playlist:
-    pass
+    def __init__(self,name):
+        self.name = name
+        self.songs = []
+    def add_song(self,song):
+        self.songs.append(song)
+    def count(self):
+        return len(self.songs)
+    def total_seconds(self):
+        total=0
+        for i in range(len(self.songs)):
+            total +=self.songs[i].seconds
+        return total
+    def longest_song(self):
+        if len(self.songs) == 0:
+            return None
+        longest=self.songs[0]
+
+        for i in range(len(self.songs)):
+            if self.songs[i].seconds > longest.seconds:
+                longest = self.songs[i]
+        return longest
+    def songs_by(self,artist):
+        result = []
+        if len(self.songs)==0:
+            return []
+        for i in range(len(self.songs)):
+            if self.songs[i].artist == artist:
+                result.append(self.songs[i].title)
+
+        return result
