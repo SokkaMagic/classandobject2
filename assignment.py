@@ -24,8 +24,27 @@ class BusCard:
 
 # Exercise 2
 class Student:
-    pass
+    def __init__(self,name):
+        self.name  =name
+        self.grades = []
+    def add_grade(self,score):
+        if 0<=score<=100:
+            self.grades.append(score)
+            return True
+        else:
+            return False
+    def average(self):
+        total = 0
+        for i in range(len(self.grades)):
+            total += self.grades[i]
+        return  total/len(self.grades)
 
+    def highest(self):
+        highest = 0
+        for i in range(len(self.grades)):
+            if highest < self.grades[i]:
+                highest = self.grades[i]
+        return highest
 # Exercise 3
 class Song:
     pass
