@@ -40,7 +40,7 @@ class Student:
         return  total/len(self.grades)
 
     def highest(self):
-        highest = 0
+        highest = self.grades[0]
         for i in range(len(self.grades)):
             if highest < self.grades[i]:
                 highest = self.grades[i]
