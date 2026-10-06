@@ -43,6 +43,8 @@ class Student:
 
 
     def highest(self):
+        if len(self.grades) == 0:
+            return None
         highest = self.grades[0]
         for i in range(len(self.grades)):
             if highest < self.grades[i]:
