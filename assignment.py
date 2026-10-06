@@ -3,7 +3,23 @@
 
 # Exercise 1
 class BusCard:
-    pass
+    def __init__(self,owner,balance,trips):
+        self.owner = owner
+        self.balance = 0
+        self.trips = 0
+    def top_up(amount):
+        if amount<1:
+            return False
+        else:
+            return True
+
+    def pay(fare):
+        if balance>=fare:
+            balance = balance - fare
+            trips += 1
+            return True
+        else:
+            return False
 
 # Exercise 2
 class Student:
