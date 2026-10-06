@@ -37,7 +37,8 @@ class Student:
         total = 0
         for i in range(len(self.grades)):
             total += self.grades[i]
-        return  total/len(self.grades)
+        return round(total / len(self.grades), 1)
+
 
     def highest(self):
         highest = self.grades[0]
