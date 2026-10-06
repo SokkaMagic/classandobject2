@@ -56,13 +56,11 @@ class Song:
         self.title = title
         self.artist=artist
         self.seconds=seconds
-    def length(self):
-        if self.seconds==0:
-            return "0:00"
-        if 10>(self.seconds-(round(self.seconds/60)*60)):
-            return f"{round(self.seconds/60)}:0{self.seconds-60*round(self.seconds/60)}"
-        return f"{round(self.seconds/60)}:{self.seconds-60*round(self.seconds/60)}"
 
+    def length(self):
+        minutes = self.seconds // 60
+        seconds = self.seconds % 60
+        return f"{minutes}:{seconds:02d}"
 
 
 class Playlist:
