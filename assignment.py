@@ -34,6 +34,8 @@ class Student:
         else:
             return False
     def average(self):
+        if len(self.grades) == 0:
+            return 0
         total = 0
         for i in range(len(self.grades)):
             total += self.grades[i]
